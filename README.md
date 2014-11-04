@@ -1,9 +1,4 @@
 PetParadise
 ===========
-dsadsa
-
-==========
 Application for online reservations for pet hotel.
-===========
-
-here
+Here your pet(god, cat, snake, hamster...) will find its second home.
