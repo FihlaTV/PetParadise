@@ -30,7 +30,7 @@ namespace PetParadise.Web
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
                         "~/Content/kendo/kendo.common.min.css",
                         "~/Content/kendo/kendo.common-bootstrap.min.css",
-                        "~/Content/kendo/kendo.metro.min.css"));
+                        "~/Content/kendo/kendo.default.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/custom").Include(
                       "~/Content/site.css"));

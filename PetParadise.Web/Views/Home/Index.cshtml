@@ -4,20 +4,21 @@
 
 <div class="panel panel-warning">
     <div class="panel-heading">
-        <h1 class="page-logo large">Pet Paradise</h1>
-        <p class="lead">Хотелът, в който вашите любимци ще открият своят втори дом.</p>
-        @Html.ActionLink("Подробно описание »", "About", "Home", new { Area = string.Empty }, new { @class = "btn btn-primary btn-lg" })
         <div class="pull-right">
-            Kon`o
+            <img src="~/Content/Imgs/backyard-garden.jpg" alt="Our pet hotel" width="450" height="300" />
         </div>
+        <h1 class="page-logo large">Pet Paradise</h1>
+        <h3 class="lead">Хотелът, в който вашите любимци ще открият своят втори дом.</h3>
+        <p>Тук може да оставите вашият домашен любимец докато сте на почивка или по работа.</p>
+        <p>Най-честите ни посетители са кучета, но ние приемаме доста широк спектър от посетители: котки, гризачи(хамстери, зайци, морски свинчета), влечуги(игуани, змии, гущери), костенурки и т.н.</p>
+        @Html.ActionLink("Подробно описание »", "About", "Home", new { Area = string.Empty }, new { @class = "btn btn-primary btn-lg" })
     </div>
-    
 </div>
 <br />
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Шибни го да не мрънкя</h2>
+        <h2>Default link</h2>
         <p>
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
             enables a clean separation of concerns and gives you full control over markup

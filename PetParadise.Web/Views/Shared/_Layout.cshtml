@@ -29,11 +29,21 @@
                     <li>@Html.ActionLink("Начало", "Index", "Home", new { Area = string.Empty }, new { @class = "" })</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Добави любимец", "Add", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
-                        <li>@Html.ActionLink("Всички любимци", "All", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
+                        <li>
+                            ОПции
+                            <ul>
+                                <li>@Html.ActionLink("Добави любимец", "Add", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Всички любимци", "All", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Нова резервация", "Add", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Всички резервации", "All", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Всички породи", "Index", "Species", new { Area = string.Empty }, new { @class = "" })</li>
+                            </ul>
+                        </li>
                         if (User.IsInRole("Admin"))
                         {
-
+                            // all reservations
+                            // all breeds
+                            // all species
                         }
                     }
                     <li>@Html.ActionLink("За нас", "About", "Home", new { Area = string.Empty }, new { @class = "" })</li>
