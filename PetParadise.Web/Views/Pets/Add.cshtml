@@ -1,30 +1,37 @@
-﻿@model PetParadise.Data.Models.Pet
-@* TODO: Add PetViewModel *@
+﻿@model PetParadise.Web.ViewModels.Pets.AddPetViewModel
 @{
-    ViewBag.Title = "Добави";
+    ViewBag.Title = "Добави любимец";
 }
 
-<h2>Добави любимец ADD ANTIFORGERY TOKEN! <br />ADD InputPetViewModel!!!</h2>
-@using(@Html.BeginForm("Add", "Pet", FormMethod.Post))
+<h2>@ViewBag.Title</h2>
+@using (@Html.BeginForm("Add", "Pets", FormMethod.Post))
 {
-    @*@AntiForgery*@
-    <div class="form-group">
-        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.AdditionalInfo, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.AdditionalInfo, new { @class = "form-control" })
-        </div>
-    </div>
-    <input type="submit" />
+    @Html.AntiForgeryToken()
+
+    @Html.EditorFor(m => m.Name)
+    @Html.EditorFor(m => m.Age)
+    @Html.EditorFor(m => m.SpeciesId, new { ListItem = Model.Species })
+    @Html.EditorFor(m => m.BreedId, new { ListItem = Model.Breeds })
+    @Html.EditorFor(m => m.AdditionalInfo)
+
+    <input type="submit" class="btn btn-default" value="Добави" />
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("#SpeciesId").change(function () {
+                var self = $(this);
+                var items = "";
+                $.getJSON("@Url.Action("GetBreedsJson", "Pets")/" +
+                    self.val(), function (data) {
+                        $.each(data, function (index, item) {
+                            items += "<option value='" + item.Value + "'>" + item.Text + "</option>";
+                        });
+                        $("#BreedId").html(items);
+                    });
+            });
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
 }

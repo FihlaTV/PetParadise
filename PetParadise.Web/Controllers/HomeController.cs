@@ -8,9 +8,12 @@ using System.Web.Mvc;
 
 namespace PetParadise.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private IPetParadiseData data;
+        public HomeController(IPetParadiseData data)
+            : base(data)
+        {
+        }
 
         public ActionResult Index()
         {

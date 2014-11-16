@@ -1,50 +1,86 @@
 ﻿namespace PetParadise.Web.Controllers
 {
-    using PetParadise.Data;
-    using PetParadise.Data.Models;
-    using PetParadise.Web.ViewModels;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-    using Microsoft.AspNet.Identity;
 
-    public class PetsController : Controller
+    using PetParadise.Data;
+    using PetParadise.Web.ViewModels.Pets;
+    using AutoMapper;
+    using PetParadise.Data.Models;
+
+
+    public class PetsController : BaseController
     {
-        private IPetParadiseData data;
-
-        public PetsController()
+        public PetsController(IPetParadiseData data)
+            : base(data)
         {
-            this.data = new PetParadiseData();
         }
 
         public ActionResult All()
         {
-            // TODO: Extract PetViewModel!!!
-            var pets = data.Pets.All();
+            var pets = this.Data.Pets.All();
             return View(pets);
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult Add()
         {
-            return View();
+            var species = this.Data
+                .Species
+                .All()
+                .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name })
+                .ToList();
+
+            var addTicketViewModel = new AddPetViewModel
+            {
+                Species = species,
+                Breeds = this.GetBreeds(int.Parse(species[0].Value))
+            };
+
+            return View(addTicketViewModel);
         }
 
+        [Authorize]
         [HttpPost]
-        public ActionResult Add(Pet model)
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(AddPetViewModel pet)
         {
-            model.BreedId = this.data.Breeds.All().Take(1).ToList()[0].Id;
-            model.OwnerId = this.User.Identity.GetUserId();
-
-            // TODO: Add InputPetViewModel
-            if (ModelState.IsValid)
+            if (pet != null && ModelState.IsValid)
             {
-                this.data.Pets.Add(model);
-                return this.RedirectToAction("Index", "Pet");
+                var dbPet = Mapper.Map<Pet>(pet);
+                dbPet.OwnerId = this.UserProfile.Id;
+
+                this.Data.Pets.Add(dbPet);
+                this.Data.SaveChanges();
+
+                return this.RedirectToAction("All", "Pets");
             }
 
-            return View(model);
+            return View(pet);
+        }
+        
+        [NonAction]
+        private IEnumerable<SelectListItem> GetBreeds(int speciesId)
+        {
+            var breeds = this.Data.Breeds
+                .All()
+                .Where(b => b.SpeciesId == speciesId)
+                .Select(b => new SelectListItem
+                {
+                    Value = b.Id.ToString(),
+                    Text = b.Name
+                });
+
+            return breeds;
+        }
+
+        public ActionResult GetBreedsJson(int id)
+        {
+            var breeds = this.GetBreeds(id);
+            return Json(breeds, JsonRequestBehavior.AllowGet);
         }
     }
 }

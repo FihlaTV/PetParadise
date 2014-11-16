@@ -11,9 +11,14 @@ using PetParadise.Data.Models;
 
 namespace PetParadise.Web.Controllers
 {
-    public class SpeciesController : Controller
+    public class SpeciesController : BaseController
     {
         private PetParadiseDbContext db = new PetParadiseDbContext();
+
+        public SpeciesController(IPetParadiseData data)
+            : base(data)
+        {
+        }
 
         // GET: Species
         public ActionResult Index()
