@@ -65,8 +65,14 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Migrations\Imgs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetParadise.Common\PetParadise.Common.csproj">
+      <Project>{3dadd7a7-d448-459c-ae14-0c7b5f15fcd4}</Project>
+      <Name>PetParadise.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PetParadise.Data.Models\PetParadise.Data.Models.csproj">
       <Project>{fccb41f9-8b58-48c5-9e23-456e8a09af08}</Project>
       <Name>PetParadise.Data.Models</Name>

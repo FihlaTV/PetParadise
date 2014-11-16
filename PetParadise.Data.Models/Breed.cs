@@ -17,6 +17,9 @@
         [Required]
         public string Name { get; set; }
 
+        [StringLength(1000)]
+        public string Information { get; set; }
+
         [Required]
         public int SpeciesId { get; set; }
 
