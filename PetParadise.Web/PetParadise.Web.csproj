@@ -1082,12 +1082,12 @@
     <Content Include="Views\Species\Details.cshtml" />
     <Content Include="Views\Species\Edit.cshtml" />
     <Content Include="Views\Species\Index.cshtml" />
+    <Content Include="Views\Breeds\All.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\Breeds\" />
     <Folder Include="ViewModels\Species\" />
-    <Folder Include="Views\Breeds\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

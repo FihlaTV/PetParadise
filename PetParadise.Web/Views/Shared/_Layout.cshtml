@@ -30,20 +30,20 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>
-                            ОПции
+                            Още...
                             <ul>
                                 <li>@Html.ActionLink("Добави любимец", "Add", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
                                 <li>@Html.ActionLink("Всички любимци", "All", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
                                 <li>@Html.ActionLink("Нова резервация", "Add", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
                                 <li>@Html.ActionLink("Всички резервации", "All", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
-                                <li>@Html.ActionLink("Всички породи", "Index", "Species", new { Area = string.Empty }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Всички породи", "Index", "Breeds", new { Area = string.Empty }, new { @class = "" })</li>
                             </ul>
                         </li>
                         if (User.IsInRole("Admin"))
                         {
                             // all reservations
-                            // all breeds
                             // all species
+                            // all users
                         }
                     }
                     <li>@Html.ActionLink("За нас", "About", "Home", new { Area = string.Empty }, new { @class = "" })</li>
