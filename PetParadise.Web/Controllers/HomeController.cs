@@ -14,27 +14,19 @@ namespace PetParadise.Web.Controllers
 
         public ActionResult Index()
         {
-            //var kuche = new Pet();
-            //var breed = new Breed();
-            //breed.Name = "Хъски";
-            //kuche.Breed = breed;
-            //kuche.Age = 10;
-            //this.data.Breeds.Add(breed);
-            //this.data.Pets.Add(kuche);
-
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Тук ще намерите повече информация относно нас и грижата, която полагаме за животинчетата ви.";
+            ViewBag.Message = "За нас.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "За повече контакти търсете разклонители.";
+            ViewBag.Message = "Контакти.";
 
             return View();
         }

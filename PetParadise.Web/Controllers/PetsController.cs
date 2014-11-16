@@ -18,7 +18,7 @@
             this.data = new PetParadiseData();
         }
 
-        public ActionResult Index()
+        public ActionResult All()
         {
             // TODO: Extract PetViewModel!!!
             var pets = data.Pets.All();

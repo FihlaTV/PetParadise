@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using PetParadise.Web.Models;
+using PetParadise.Web.ViewModels;
 using PetParadise.Data;
 using PetParadise.Data.Models;
 
