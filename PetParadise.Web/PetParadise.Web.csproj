@@ -215,7 +215,6 @@
     <Compile Include="ViewModels\Pets\ListPetViewModel.cs" />
     <Compile Include="ViewModels\Pets\PetDetailsViewModel.cs" />
     <Compile Include="ViewModels\Reservations\AddReservationViewModel.cs" />
-    <Compile Include="ViewModels\Reservations\ListReservationViewModel.cs" />
     <Compile Include="ViewModels\Reservations\ReservationDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

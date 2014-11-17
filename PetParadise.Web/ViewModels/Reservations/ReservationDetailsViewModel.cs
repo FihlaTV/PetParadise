@@ -10,6 +10,8 @@
 
     public class ReservationDetailsViewModel : IMapFrom<Reservation>, IHaveCustomMappings
     {
+        public Guid Id { get; set; }
+
         [Display(Name = "Начална дата")]
         public DateTime StartDate { get; set; }
 

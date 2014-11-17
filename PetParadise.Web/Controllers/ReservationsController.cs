@@ -54,7 +54,7 @@
             return View(reservation);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(Guid id)
         {
             var reservation = this.Data.Reservations.GetById(id);
             if (reservation == null)
@@ -72,9 +72,10 @@
         {
             var reservations = this.Data.Reservations
                 .All()
-                .Where(r => r.Pet.OwnerId == this.UserProfile.Id)
+                .Where(r => r.Pet.Owner.UserName == this.UserProfile.UserName)
                 .Project()
-                .To<ReservationDetailsViewModel>();
+                .To<ReservationDetailsViewModel>()
+                .ToList();
 
             return View(reservations);
         }

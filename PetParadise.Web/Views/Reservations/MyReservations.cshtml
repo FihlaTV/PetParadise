@@ -1,7 +1,32 @@
-﻿
+﻿@model IList<PetParadise.Web.ViewModels.Reservations.ReservationDetailsViewModel>
 @{
-    ViewBag.Title = "AllMine";
+    ViewBag.Title = "Моите резервации";
 }
 
-<h2>AllMine</h2>
+<h2>@ViewBag.Title</h2>
+@if (Model.Count == 0)
+{
+    <h2>Нямате резервации.</h2>
+}
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    var currentReservationIndex = i;
+    if (currentReservationIndex == Model.Count)
+    {
+        break;
+    }
+    var reservation = Model[currentReservationIndex];
+
+    <div class="col-md-4">
+        <a href="/Reservations/Details/@reservation.Id">
+            <div class="alert alert-success">
+                <h3>Име: @reservation.PetName</h3>
+                <p>Собственик: @reservation.PetOwner</p>
+                <p>Начална дата: @reservation.StartDate</p>
+                <p>Крайна дата: @reservation.EndDate</p>
+            </div>
+        </a>
+    </div>
+}
 
