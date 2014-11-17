@@ -191,6 +191,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BreedsController.cs" />
@@ -449,6 +451,7 @@
     <Content Include="Content\kendo\HighContrast\Thumbs.db" />
     <Content Include="Content\kendo\images\kendoui.ttf" />
     <Content Include="Content\kendo\images\kendoui.woff" />
+    <Content Include="Areas\Administration\Views\web.config" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Libraries\Kendo.Mvc.dll" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1131,6 +1134,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Admin\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="ViewModels\Breeds\" />
     <Folder Include="ViewModels\Species\" />
     <Folder Include="Views\Base\" />
@@ -1141,6 +1147,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PetParadise.Common\PetParadise.Common.csproj">
+      <Project>{3dadd7a7-d448-459c-ae14-0c7b5f15fcd4}</Project>
+      <Name>PetParadise.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PetParadise.Data.Models\PetParadise.Data.Models.csproj">
       <Project>{fccb41f9-8b58-48c5-9e23-456e8a09af08}</Project>
       <Name>PetParadise.Data.Models</Name>
