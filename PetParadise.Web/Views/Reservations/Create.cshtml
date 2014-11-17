@@ -1,0 +1,31 @@
+﻿@model PetParadise.Web.ViewModels.Reservations.AddReservationViewModel
+@{
+    ViewBag.Title = "Добави резервация";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (@Html.BeginForm("Create", "Reservations", FormMethod.Post, new { @class = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-2">
+            <strong>Начална дата: </strong>
+        </div>
+        @Html.EditorFor(m => m.StartDate)
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <strong>Крайна дата: </strong>
+        </div>
+        @Html.EditorFor(m => m.EndDate)
+    </div>
+    <br />
+    @Html.EditorFor(m => m.PetId, new { ListItem = Model.Pets })
+    @Html.EditorFor(m => m.Comments)
+    <br />
+    <input type="submit" class="btn btn-default" value="Добави" />
+}
+
+@Scripts.Render("~/bundles/jqueryval")
+}

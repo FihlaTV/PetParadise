@@ -193,6 +193,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Reservations\ReservationViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BreedsController.cs" />
@@ -213,7 +214,9 @@
     <Compile Include="ViewModels\Pets\AddPetViewModel.cs" />
     <Compile Include="ViewModels\Pets\ListPetViewModel.cs" />
     <Compile Include="ViewModels\Pets\PetDetailsViewModel.cs" />
-    <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
+    <Compile Include="ViewModels\Reservations\AddReservationViewModel.cs" />
+    <Compile Include="ViewModels\Reservations\ListReservationViewModel.cs" />
+    <Compile Include="ViewModels\Reservations\ReservationDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -1131,16 +1134,15 @@
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\NumberCustom.cshtml" />
     <Content Include="Views\Pets\Details.cshtml" />
+    <Content Include="Views\Reservations\Create.cshtml" />
+    <Content Include="Views\Reservations\MyReservations.cshtml" />
+    <Content Include="Views\Reservations\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="ViewModels\Breeds\" />
-    <Folder Include="ViewModels\Species\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Reservations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -27,20 +27,29 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" id="menu">
                     <li>@Html.ActionLink("Начало", "Index", "Home", new { Area = string.Empty }, new { @class = "" })</li>
+                    <li>@Html.ActionLink("Всички любимци", "All", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>
                             Още...
                             <ul>
                                 <li>@Html.ActionLink("Добави любимец", "Add", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
-                                <li>@Html.ActionLink("Всички любимци", "All", "Pets", new { Area = string.Empty }, new { @class = "" })</li>
-                                <li>@Html.ActionLink("Нова резервация", "Add", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
-                                <li>@Html.ActionLink("Всички резервации", "All", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Нова резервация", "Create", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Моите резервации", "MyReservations", "Reservations", new { Area = string.Empty }, new { @class = "" })</li>
                                 <li>@Html.ActionLink("Всички породи", "Index", "Breeds", new { Area = string.Empty }, new { @class = "" })</li>
                             </ul>
                         </li>
                         if (User.IsInRole("Admin"))
                         {
+                            <li>
+                                Администрация
+                                <ul>
+                                    <li>Линк1</li>
+                                    <li>Линк1</li>
+                                    <li>Линк1</li>
+                                </ul>
+                            </li>
                             // all reservations
                             // all species
                             // all users

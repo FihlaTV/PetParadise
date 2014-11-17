@@ -1,0 +1,16 @@
+﻿@model PetParadise.Web.ViewModels.Reservations.ReservationDetailsViewModel
+@{
+    ViewBag.Title = "Детайли за резервация";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-control"><strong>Име:</strong> @Model.PetName</div>
+        <div class="form-control"><strong>Собственик:</strong> @Model.PetOwner</div>
+        <div class="form-control"><strong>Начална дата:</strong> @Model.StartDate</div>
+        <div class="form-control"><strong>Крайна дата:</strong> @Model.EndDate</div>
+        <div class="form-control"><strong>Бележки:</strong> @Model.Comments</div>
+    </div>
+</div>
