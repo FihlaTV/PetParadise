@@ -65,9 +65,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\Imgs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PetParadise.Common\PetParadise.Common.csproj">
       <Project>{3dadd7a7-d448-459c-ae14-0c7b5f15fcd4}</Project>
@@ -77,6 +75,19 @@
       <Project>{fccb41f9-8b58-48c5-9e23-456e8a09af08}</Project>
       <Name>PetParadise.Data.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Migrations\Imgs\bigal.jpg" />
+    <Content Include="Migrations\Imgs\bulldog.jpg" />
+    <Content Include="Migrations\Imgs\chihuahua.jpg" />
+    <Content Include="Migrations\Imgs\dakel.jpg" />
+    <Content Include="Migrations\Imgs\dalmatin.jpg" />
+    <Content Include="Migrations\Imgs\golden-retriever.jpeg" />
+    <Content Include="Migrations\Imgs\koker.jpg" />
+    <Content Include="Migrations\Imgs\nemska-ovcharka.jpg" />
+    <Content Include="Migrations\Imgs\samoyed.jpg" />
+    <Content Include="Migrations\Imgs\siamska.jpg" />
+    <Content Include="Migrations\Imgs\yorki.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

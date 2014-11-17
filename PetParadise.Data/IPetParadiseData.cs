@@ -13,6 +13,8 @@
 
         IRepository<Reservation> Reservations { get; }
 
+        IRepository<Image> Images { get; }
+
         IRepository<User> Users { get; }
 
         void SaveChanges();

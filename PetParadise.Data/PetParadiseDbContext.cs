@@ -42,6 +42,8 @@
 
         public IDbSet<Reservation> Reservations { get; set; }
 
+        public IDbSet<Image> Images { get; set; }
+
         public new void SaveChanges()
         {
             base.SaveChanges();

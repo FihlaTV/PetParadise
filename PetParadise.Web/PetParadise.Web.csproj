@@ -197,6 +197,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\SpeciesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -208,6 +209,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Pets\AddPetViewModel.cs" />
+    <Compile Include="ViewModels\Pets\ListPetViewModel.cs" />
+    <Compile Include="ViewModels\Pets\PetDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -1123,12 +1127,14 @@
     <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\NumberCustom.cshtml" />
+    <Content Include="Views\Pets\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\Breeds\" />
     <Folder Include="ViewModels\Species\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Reservations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

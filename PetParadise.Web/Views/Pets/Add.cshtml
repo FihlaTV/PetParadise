@@ -4,7 +4,7 @@
 }
 
 <h2>@ViewBag.Title</h2>
-@using (@Html.BeginForm("Add", "Pets", FormMethod.Post))
+@using (@Html.BeginForm("Add", "Pets", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -13,7 +13,15 @@
     @Html.EditorFor(m => m.SpeciesId, new { ListItem = Model.Species })
     @Html.EditorFor(m => m.BreedId, new { ListItem = Model.Breeds })
     @Html.EditorFor(m => m.AdditionalInfo)
-
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(m => m.UploadedImage)
+        </div>
+        <div class="col-md-5">
+            <input type="file" name="UploadedImage" />
+        </div>
+    </div>
+    <br />
     <input type="submit" class="btn btn-default" value="Добави" />
 }
 

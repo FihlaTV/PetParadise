@@ -19,7 +19,7 @@
             return this.set;
         }
 
-        public T Find(object id)
+        public T GetById(object id)
         {
             return this.set.Find(id);
         }
@@ -42,7 +42,7 @@
 
         public T Delete(object id)
         {
-            T entity = this.Find(id);
+            T entity = this.GetById(id);
             this.Delete(entity);
             return entity;
         }

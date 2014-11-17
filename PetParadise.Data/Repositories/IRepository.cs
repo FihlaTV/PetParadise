@@ -8,7 +8,7 @@
 
         void Add(T entity);
 
-        T Find(object id);
+        T GetById(object id);
 
         void Update(T entity);
 

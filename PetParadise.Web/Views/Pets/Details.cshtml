@@ -1,0 +1,33 @@
+﻿@model PetParadise.Web.ViewModels.Pets.PetDetailsViewModel
+@{
+    ViewBag.Title = "Детайли";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-control"><strong>Име:</strong> @Model.Name</div>
+        <div class="form-control"><strong>Възраст:</strong> @Model.Age</div>
+        <div class="form-control"><strong>Информация:</strong> @Model.AdditionalInfo</div>
+        <div class="form-control"><strong>Собственик:</strong> @Model.OwnerName</div>
+        <div class="form-control"><strong>Вид:</strong> @Model.SpeciesName</div>
+        <div class="form-control"><strong>Порода:</strong> @Model.BreedName</div>
+        <div class="form-control"><strong>Брой резервации:</strong> @Model.ReservationsCount</div>
+    </div>
+    <div class="col-md-6">
+        @if (Model.ImageId != null)
+        {
+            <img src="@Url.Action("Image", "Pets", new { id = Model.ImageId.Value })" alt="@Model.Name" class="img-responsive" width="300" height="250" />
+        }
+        else if (Model.BreedName != null)
+        {
+            <img src="@Url.Action("ImageByBreed", "Pets", new { id = Model.BreedName })" alt="@Model.Name" class="img-responsive" width="300" height="250" />
+        }
+        else
+        {
+            <p>No image!</p>
+        }
+    </div>
+</div>
+

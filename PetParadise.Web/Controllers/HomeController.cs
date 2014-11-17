@@ -34,6 +34,7 @@ namespace PetParadise.Web.Controllers
             return View();
         }
 
+        [OutputCache(Duration = 60 * 60)]
         public ActionResult Error()
         {
             return View();

@@ -54,6 +54,14 @@
             }
         }
 
+        public IRepository<Image> Images
+        {
+            get
+            {
+                return this.GetRepository<Image>();
+            }
+        }
+
         public IRepository<User> Users
         {
             get

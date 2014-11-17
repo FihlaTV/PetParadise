@@ -188,7 +188,7 @@ namespace PetParadise.Data.Migrations
         private Image GetSampleImage(string fileName)
         {
             var directory = AssemblyHelpers.GetDirectoryForAssembyl(Assembly.GetExecutingAssembly());
-            var file = File.ReadAllBytes(directory + "/../../PetParadise.Data/Migrations/Imgs/" + fileName);
+            var file = File.ReadAllBytes(directory + "/../../Migrations/Imgs/" + fileName);
             var image = new Image
             {
                 Contetnt = file,

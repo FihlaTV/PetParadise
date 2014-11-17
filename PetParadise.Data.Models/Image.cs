@@ -7,6 +7,7 @@
     {
         public Image()
         {
+            this.Pets = new HashSet<Pet>();
             this.Breeds = new HashSet<Breed>();
         }
 
@@ -16,6 +17,8 @@
         public byte[] Contetnt { get; set; }
 
         public string ContentType { get; set; }
+
+        public ICollection<Pet> Pets { get; set; }
 
         public ICollection<Breed> Breeds { get; set; }
     }

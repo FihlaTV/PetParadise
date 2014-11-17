@@ -40,6 +40,10 @@
 
         public virtual Breed Breed { get; set; }
 
+        public int? ImageId { get; set; }
+
+        public virtual Image Image { get; set; }
+
         public ICollection<Reservation> Reservations { get; set; }
     }
 }

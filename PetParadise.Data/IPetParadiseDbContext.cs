@@ -13,6 +13,8 @@ namespace PetParadise.Data
 
         IDbSet<Reservation> Reservations { get; set; }
 
+        IDbSet<Image> Images { get; set; }
+
         void SaveChanges();
 
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
