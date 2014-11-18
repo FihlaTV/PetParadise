@@ -17,13 +17,13 @@
         [Required]
         [Display(Name = "Начална дата")]
         [DateAttribute]
-        [UIHint("DateTime")]
+        [UIHint("DateTimeInput")]
         public DateTime StartDate { get; set; }
 
         [Required]
         [Display(Name = "Крайна дата")]
         [DateAttribute]
-        [UIHint("DateTime")]
+        [UIHint("DateTimeInput")]
         public DateTime EndDate { get; set; }
 
         [StringLength(1000)]

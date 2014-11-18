@@ -45,14 +45,10 @@
                             <li>
                                 Администрация
                                 <ul>
+                                    <li>@Html.ActionLink("Видове", "Index", "Species", new { Area = string.Empty }, new { @class = "" })</li>
                                     <li>@Html.ActionLink("Резервации", "Index", "Reservations", new { Area = "Administration" }, new { @class = "" })</li>
-                                    <li>Линк1</li>
-                                    <li>Линк1</li>
                                 </ul>
                             </li>
-                            // all reservations
-                            // all species
-                            // all users
                         }
                     }
                     <li>@Html.ActionLink("За нас", "About", "Home", new { Area = string.Empty }, new { @class = "" })</li>

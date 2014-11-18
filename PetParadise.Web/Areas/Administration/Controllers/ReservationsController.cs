@@ -37,8 +37,7 @@
             return this.Data.Reservations
                 .All()
                 .Project()
-                .To<ViewModel>()
-                .ToList();
+                .To<ViewModel>();
         }
 
         protected override T GetById<T>(object id)
