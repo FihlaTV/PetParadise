@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-
-namespace PetParadise.Web.Areas.Administration
+﻿namespace PetParadise.Web.Areas.Administration
 {
+    using System.Web.Mvc;
+
     public class AdministrationAreaRegistration : AreaRegistration 
     {
         public override string AreaName 

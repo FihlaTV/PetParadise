@@ -5,6 +5,8 @@
 
     public interface IPetParadiseData
     {
+        IPetParadiseDbContext Context { get; }
+
         IRepository<Pet> Pets { get; }
 
         IRepository<Species> Species  { get; }

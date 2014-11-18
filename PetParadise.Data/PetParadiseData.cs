@@ -22,6 +22,14 @@
             this.repositories = new Dictionary<Type, object>();
         }
 
+        public IPetParadiseDbContext Context
+        {
+            get
+            {
+                return this.context;
+            }
+        }
+
         public IRepository<Pet> Pets
         {
             get
